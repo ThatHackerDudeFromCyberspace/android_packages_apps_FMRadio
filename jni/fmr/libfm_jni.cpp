@@ -25,7 +25,7 @@
 static int g_idx = -1;
 extern struct fmr_ds fmr_data;
 
-jboolean openDev(JNIEnv *env, jobject thiz)
+jboolean openDev(JNIEnv, jobject)
 {
     int ret = 0;
 
@@ -35,7 +35,7 @@ jboolean openDev(JNIEnv *env, jobject thiz)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jboolean closeDev(JNIEnv *env, jobject thiz)
+jboolean closeDev(JNIEnv, jobject)
 {
     int ret = 0;
 
@@ -45,7 +45,7 @@ jboolean closeDev(JNIEnv *env, jobject thiz)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jboolean powerUp(JNIEnv *env, jobject thiz, jfloat freq)
+jboolean powerUp(JNIEnv, jobject, jfloat freq)
 {
     int ret = 0;
     int tmp_freq;
@@ -58,7 +58,7 @@ jboolean powerUp(JNIEnv *env, jobject thiz, jfloat freq)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jboolean powerDown(JNIEnv *env, jobject thiz, jint type)
+jboolean powerDown(JNIEnv, jobject, jint type)
 {
     int ret = 0;
 
@@ -68,7 +68,7 @@ jboolean powerDown(JNIEnv *env, jobject thiz, jint type)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jboolean tune(JNIEnv *env, jobject thiz, jfloat freq)
+jboolean tune(JNIEnv, jobject, jfloat freq)
 {
     int ret = 0;
     int tmp_freq;
@@ -80,7 +80,7 @@ jboolean tune(JNIEnv *env, jobject thiz, jfloat freq)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jfloat seek(JNIEnv *env, jobject thiz, jfloat freq, jboolean isUp) //jboolean isUp;
+jfloat seek(JNIEnv, jobject, jfloat freq, jboolean isUp) //jboolean isUp;
 {
     int ret = 0;
     int tmp_freq;
@@ -106,7 +106,7 @@ jfloat seek(JNIEnv *env, jobject thiz, jfloat freq, jboolean isUp) //jboolean is
     return val;
 }
 
-jshortArray autoScan(JNIEnv *env, jobject thiz)
+jshortArray autoScan(JNIEnv *env, jobject)
 {
 #define FM_SCAN_CH_SIZE_MAX 200
     int ret = 0;
@@ -143,7 +143,7 @@ out:
     return scanChlarray;
 }
 
-jshort readRds(JNIEnv *env, jobject thiz)
+jshort readRds(JNIEnv, jobject)
 {
     int ret = 0;
     uint16_t status = 0;
@@ -158,7 +158,7 @@ jshort readRds(JNIEnv *env, jobject thiz)
     return status;
 }
 
-jbyteArray getPs(JNIEnv *env, jobject thiz)
+jbyteArray getPs(JNIEnv *env, jobject)
 {
     int ret = 0;
     jbyteArray PSname;
@@ -176,7 +176,7 @@ jbyteArray getPs(JNIEnv *env, jobject thiz)
     return PSname;
 }
 
-jbyteArray getLrText(JNIEnv *env, jobject thiz)
+jbyteArray getLrText(JNIEnv *env, jobject)
 {
     int ret = 0;
     jbyteArray LastRadioText;
@@ -194,7 +194,7 @@ jbyteArray getLrText(JNIEnv *env, jobject thiz)
     return LastRadioText;
 }
 
-jshort activeAf(JNIEnv *env, jobject thiz)
+jshort activeAf(JNIEnv, jobject)
 {
     int ret = 0;
     jshort ret_freq = 0;
