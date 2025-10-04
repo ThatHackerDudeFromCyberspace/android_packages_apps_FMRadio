@@ -86,12 +86,6 @@ int FMR_chk_cfg_data(int)
     return 0;
 }
 
-static void sig_alarm(int sig)
-{
-    LOGI("+++Receive sig %d\n", sig);
-    return;
-}
-
 int FMR_init()
 {
     int idx;
