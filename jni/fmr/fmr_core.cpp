@@ -486,7 +486,7 @@ int FMR_seek_Channel(int idx, int start_freq, int min_freq, int max_freq, int ba
 
 int FMR_seek(int idx, int start_freq, int dir, int *ret_freq)
 {
-    fm_s32 ret = 0, j;
+    fm_s32 ret = 0;
     fm_s32 band_channel_no = 0;
     fm_u8 seek_space = 10;
     fm_u16 min_freq, max_freq;
@@ -577,7 +577,7 @@ int FMR_Restore_Search(int idx)
     return 0;
 }
 
-int FMR_scan_Channels(int idx, uint16_t *scan_tbl, int *max_cnt, fm_s32 band_channel_no, fm_u16 Start_Freq, fm_u8 seek_space, fm_u8 NF_Space)
+int FMR_scan_Channels(int idx, uint16_t *scan_tbl, int *max_cnt, fm_s32 band_channel_no, fm_u16 Start_Freq, fm_u8 seek_space, fm_u8)
 {
     fm_s32 ret = 0, Num = 0, i, j;
     fm_u32 ChannelNo = 0;
