@@ -208,7 +208,7 @@ jshort activeAf(JNIEnv, jobject)
     return ret_freq;
 }
 
-jshortArray getAFList(JNIEnv *env, jobject thiz)
+jshortArray getAFList(JNIEnv *env, jobject)
 {
     int ret = 0;
     jshortArray AFList;
@@ -226,7 +226,7 @@ jshortArray getAFList(JNIEnv *env, jobject thiz)
     return AFList;
 }
 
-jint setRds(JNIEnv *env, jobject thiz, jboolean rdson)
+jint setRds(JNIEnv, jobject, jboolean rdson)
 {
     int ret = 0;
     int onoff = -1;
@@ -244,7 +244,7 @@ jint setRds(JNIEnv *env, jobject thiz, jboolean rdson)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jboolean stopScan(JNIEnv *env, jobject thiz)
+jboolean stopScan(JNIEnv, jobject)
 {
     int ret = 0;
 
@@ -256,7 +256,7 @@ jboolean stopScan(JNIEnv *env, jobject thiz)
     return ret?JNI_FALSE:JNI_TRUE;
 }
 
-jint setMute(JNIEnv *env, jobject thiz, jboolean mute)
+jint setMute(JNIEnv, jobject, jboolean mute)
 {
     int ret = 0;
 
@@ -277,7 +277,7 @@ jint setMute(JNIEnv *env, jobject thiz, jboolean mute)
  *      0: NOT support
  *      -1: error
  ******************************************/
-jint isRdsSupport(JNIEnv *env, jobject thiz)
+jint isRdsSupport(JNIEnv, jobject)
 {
     int ret = 0;
     int supt = -1;
@@ -301,7 +301,7 @@ jint isRdsSupport(JNIEnv *env, jobject thiz)
  *          1: Failed
  *          2: Not support
  ******************************************/
-jint switchAntenna(JNIEnv *env, jobject thiz, jint antenna)
+jint switchAntenna(JNIEnv, jobject, jint antenna)
 {
     int ret = 0;
     jint jret = 0;
@@ -407,7 +407,7 @@ typedef union {
     void* venv;
 } UnionJNIEnvToVoid;
 
-jint JNI_OnLoad(JavaVM* vm, void* reserved)
+jint JNI_OnLoad(JavaVM* vm, void*)
 {
     UnionJNIEnvToVoid uenv;
     uenv.venv = NULL;
